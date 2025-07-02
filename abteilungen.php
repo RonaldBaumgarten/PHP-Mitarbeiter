@@ -11,30 +11,52 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<ul class="navbar-nav">
-      		<li class="nav-item active">
+      		<li class="nav-item">
         		<a class="nav-link" href="index.php">Home <span class="sr-only"></span></a>
 			</li>
       		<li class="nav-item">
         		<a class="nav-link" href="mitarbeiter.php">Mitarbeiter <span class="sr-only"></span></a>
 			</li>
-      		<li class="nav-item">
+      		<li class="nav-item active">
         		<a class="nav-link" href="abteilungen.php">Abteilungen <span class="sr-only"></span></a>
 			</li>
 		<ul>
 	</nav>
 
-	<div class="container p-5 my-5 border">
-		<h1>Willkommen zur Mitarbeiterverwaltung</h1>
+	<div class="container-sm p-5 my-5 border">
+		<h1>Abteilungen</h1>
 	</div>
 
-    <div class="container p-2 my-5 border">
-        <div class="row">
-            <div class="col-sm-2 ms-3 me-3">
-                <a class="btn btn-primary" href="mitarbeiter.php">Mitarbeiter </a>
-            </div>
-            <div class="col-sm-2 ms-3 me-3">
-                <a class="btn btn-primary" href="abteilungen.php">Abteilungen </a>
-            </div>
-        </div>
-    </div>
+	<div class="container-sm p-2 my-5 border">
+		<form action="funktionen.php" method="POST">
+			<div class="mb-3">
+				<label class="form-label">Bezeichnung</label>
+				<input class="form-control" type="text" name="bezeichnung">
+				<button type="submit" class="btn btn-primary" name="abteilungInsert">Hinzufügen</button>
+			</div>
+		</form>
+
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<th scope="col">ID Nummer</th>
+				<th scope="col">Bezeichnung</th>
+				<th scope="col"></th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td>Marketing</td>
+				<td>delete</td>
+			</tr>
+			<tr>
+				<th scope="row">2</th>
+				<td>Finanzen</td>
+				<td>delete</td>
+			</tr>
+			</tbody>
+		</table>
+
+	</div>
 </body>
