@@ -12,13 +12,13 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<ul class="navbar-nav">
       		<li class="nav-item">
-        		<a class="nav-link" href="index.php">Home <span class="sr-only"></span></a>
+        		<a class="nav-link" href="index.php">Home </a>
 			</li>
       		<li class="nav-item">
-        		<a class="nav-link" href="mitarbeiter.php">Mitarbeiter <span class="sr-only"></span></a>
+        		<a class="nav-link" href="mitarbeiter.php">Mitarbeiter </a>
 			</li>
       		<li class="nav-item active">
-        		<a class="nav-link" href="abteilungen.php">Abteilungen <span class="sr-only"></span></a>
+        		<a class="nav-link" href="abteilungen.php">Abteilungen </a>
 			</li>
 		<ul>
 	</nav>
@@ -32,7 +32,7 @@
 			<div class="mb-3">
 				<label class="form-label">Bezeichnung</label>
 				<input class="form-control" type="text" name="bezeichnung">
-				<button type="submit" class="btn btn-primary" name="abteilungInsert">Hinzufügen</button>
+				<button type="submit" class="btn m-2 btn-primary" name="abteilungInsert">Hinzufügen</button>
 			</div>
 		</form>
 
