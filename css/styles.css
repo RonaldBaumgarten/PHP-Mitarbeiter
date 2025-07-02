@@ -1,0 +1,66 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+	font-family: Tahoma;
+	margin:0;
+	background: rgb(240,240,240);
+}
+
+.formulare{
+	background: white;
+	margin: 30px auto;
+	padding: 0 20px;
+}
+
+form{
+	background: rgb(230,200,255);
+	padding: 20px 25px;
+	border-radius: 10px;
+	display: grid;
+	gap: 20px;
+}
+
+form label {
+	font-weight: 600;
+	display: block;
+	margin-bottom: 0.5em;
+}
+
+form input, form select{
+	padding: 1em 1.5em;
+	border-radius: 1em;
+}
+
+form button {
+	background-color: blue;
+	color:white;
+	border-radius:0.6em;
+	cursor:pointer;
+	width:12em;
+}
+
+form button:hover {
+	background-color: white;
+	color: blue;
+}
+
+table {
+	background: white;
+	box-shadow: 0 0.1em 0.2em rgba(0,0,0,10);
+	border-collapse: collapse;
+}
+
+th, td{
+	text-align:left;
+	border: 1px solid;
+	border-collapse: collapse;
+}
+
+th{
+	background: black;
+	color: white;
+}
+
+*/
