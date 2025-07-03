@@ -36,6 +36,8 @@
 				<input class="form-control" type="text" name="nachname">
 				<label class="form-label">Abteilung</label>
 				<select class="form-select" name="abteilung">
+				<option disabled selected>Wählen sie eine Abteilung</option>";
+
 <?php
 	$sql = $conn->query("SELECT * FROM abteilung");
 
@@ -43,6 +45,7 @@
 		echo "<option value='$zeile[abtID]'>$zeile[bezeichnung]</option>";
 	}
 ?>
+
 				</select>
 				<button type="submit" class="btn btn-primary m-2" name="mitarbeiterInsert">Hinzufügen</button>
 			</div>
@@ -59,19 +62,20 @@
 			</tr>
 			</thead>
 			<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Thomas</td>
-				<td>Thomlin</td>
-				<td>Marketing</td>
-				
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Finanzen</td>
-				<td>delete</td>
-				<td>IT</td>
-			</tr>
+
+<?php
+	$sql = $conn->query("SELECT * FROM mitarbeiter");
+
+	while($zeile = $sql->fetch_assoc()){
+		echo "<tr>";
+		echo "<th scope='row'>$zeile[idnummer]</th>";
+		echo "<td>$zeile[vorname]</td>";
+		echo "<td>$zeile[nachname]</td>";
+		echo "<td>$zeile[abteilungsID]</td>";
+		echo "</tr> ";
+	}
+?>
+
 			</tbody>
 		</table>
 

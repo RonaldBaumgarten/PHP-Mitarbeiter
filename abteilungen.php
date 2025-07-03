@@ -1,5 +1,6 @@
 <?php
 	include("config/db.php");
+	include("config/funktionen.php");
 ?>
 
 <html>
@@ -28,7 +29,7 @@
 	</div>
 
 	<div class="container-sm p-2 my-5 border">
-		<form action="funktionen.php" method="POST">
+		<form action="config/funktionen.php" method="POST">
 			<div class="mb-3">
 				<label class="form-label">Bezeichnung</label>
 				<input class="form-control" type="text" name="bezeichnung">
@@ -45,16 +46,26 @@
 			</tr>
 			</thead>
 			<tbody>
+
+<?php
+	$sql = $conn->query("SELECT * FROM abteilung");
+
+	while($line = $sql->fetch_assoc()){
+?>
 			<tr>
-				<th scope="row">1</th>
-				<td>Marketing</td>
-				<td>delete</td>
+			<th scope="row"><?=$line['abtID']?></th>
+				<td><?=$line['bezeichnung']?></td>
+				<td class="btn">
+					<a href="config/funktionen.php?abtDelid=<?=$line['abtID'];?>">delete</a>
+				</td>
+				<td class="btn">
+					<a href="abtBearbeiten.php?abtID=<?=$line['abtID'];?>">edit</a>
+				</td>
 			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Finanzen</td>
-				<td>delete</td>
-			</tr>
+<?php
+	}
+?>
+
 			</tbody>
 		</table>
 
