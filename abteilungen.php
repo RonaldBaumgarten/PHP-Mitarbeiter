@@ -59,7 +59,7 @@
 					<a href="config/funktionen.php?abtDelid=<?=$line['abtID'];?>">delete</a>
 				</td>
 				<td class="btn">
-					<a href="abtBearbeiten.php?abtID=<?=$line['abtID'];?>">edit</a>
+					<a href="abtBearbeiten.php?abtID=<?=$line['abtID'];?>&abtBezeichnung=<?=$line['bezeichnung'];?>">edit</a>
 				</td>
 			</tr>
 <?php

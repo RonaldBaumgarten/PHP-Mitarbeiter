@@ -50,4 +50,17 @@ if(isset($_GET{'maDelid'})){
 	}
 }
 
+if(isset($_POST{'abtEdit'})){
+	$sql = $conn->prepare("UPDATE abteilung SET bezeichnung=? WHERE abtID=?;");
+	$sql->bind_param("si", $_POST['bezeichnung'], $_POST['abtID']);
+
+	//echo "$_POST[bezeichnung], $_POST[abtId]);";
+	if($sql->execute()) {
+		header("location:../abteilungen.php");
+		exit();
+	}else{
+		echo "Fehler: ".$sql->error;
+	}
+}
+
 ?>

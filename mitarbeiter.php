@@ -76,6 +76,9 @@
 				<td class="btn">
 					<a href="config/funktionen.php?maDelid=<?=$zeile['idnummer'];?>">delete</a>
 				</td>
+				<td class="btn">
+					<a href="mitarbeiterBearbeiten.php?maID=<?=$zeile['idnummer'];?>">edit</a>
+				</td>
 
 <?php
 	}

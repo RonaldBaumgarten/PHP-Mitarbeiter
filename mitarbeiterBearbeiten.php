@@ -1,8 +1,7 @@
+
 <?php
 	include("config/db.php");
-	include("config/funktionen.php");
 ?>
-
 
 <html>
 <head>
@@ -16,26 +15,15 @@
       		<li class="nav-item">
         		<a class="nav-link" href="index.php">Home </a>
 			</li>
-      		<li class="nav-item">
+      		<li class="nav-item active">
         		<a class="nav-link" href="mitarbeiter.php">Mitarbeiter </a>
 			</li>
-      		<li class="nav-item active">
+      		<li class="nav-item">
         		<a class="nav-link" href="abteilungen.php">Abteilungen </a>
 			</li>
 		<ul>
 	</nav>
 
 	<div class="container-sm p-5 my-5 border">
-		<h1>Abteilung bearbeiten</h1>
+		<h1>Mitarbeiter bearbeiten</h1>
 	</div>
-
-	<div class="container-sm p-2 my-5 border">
-		<form action="config/funktionen.php" method="POST">
-			<div class="mb-3">
-				<label class="form-label" required>Bezeichnung</label>
-				<input class="form-control" type="hidden" name="abtID" value="<?=$_GET['abtID'];?>">
-				<input class="form-control" type="text" name="bezeichnung" value="<?=$_GET['abtBezeichnung'];?>">
-				<button type="submit" class="btn m-2 btn-primary" name="abtEdit">Ändern</button>
-			</div>
-		</form>
-</body>
