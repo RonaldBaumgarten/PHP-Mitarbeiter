@@ -28,7 +28,7 @@
 	</div>
 
 	<div class="container-sm p-2 my-5 border">
-		<form action="funktionen.php" method="POST">
+		<form action="config/funktionen.php" method="POST">
 			<div class="mb-3">
 				<label class="form-label">Vorname</label>
 				<input class="form-control" type="text" name="vorname">
@@ -64,15 +64,20 @@
 			<tbody>
 
 <?php
-	$sql = $conn->query("SELECT * FROM mitarbeiter");
+	$sql = $conn->query("SELECT * FROM mitarbeiter JOIN abteilung ON mitarbeiter.abteilungsID=abteilung.abtID ");
 
 	while($zeile = $sql->fetch_assoc()){
 		echo "<tr>";
 		echo "<th scope='row'>$zeile[idnummer]</th>";
 		echo "<td>$zeile[vorname]</td>";
 		echo "<td>$zeile[nachname]</td>";
-		echo "<td>$zeile[abteilungsID]</td>";
-		echo "</tr> ";
+		echo "<td>$zeile[bezeichnung]</td>";
+?>
+				<td class="btn">
+					<a href="config/funktionen.php?maDelid=<?=$zeile['idnummer'];?>">delete</a>
+				</td>
+
+<?php
 	}
 ?>
 

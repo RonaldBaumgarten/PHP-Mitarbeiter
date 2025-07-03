@@ -31,7 +31,7 @@
 	<div class="container-sm p-2 my-5 border">
 		<form action="config/funktionen.php" method="POST">
 			<div class="mb-3">
-				<label class="form-label">Bezeichnung</label>
+				<label class="form-label" required>Bezeichnung</label>
 				<input class="form-control" type="text" name="bezeichnung">
 				<button type="submit" class="btn m-2 btn-primary" name="abteilungInsert">Hinzufügen</button>
 			</div>
