@@ -54,9 +54,21 @@ if(isset($_POST{'abtEdit'})){
 	$sql = $conn->prepare("UPDATE abteilung SET bezeichnung=? WHERE abtID=?;");
 	$sql->bind_param("si", $_POST['bezeichnung'], $_POST['abtID']);
 
-	//echo "$_POST[bezeichnung], $_POST[abtId]);";
 	if($sql->execute()) {
 		header("location:../abteilungen.php");
+		exit();
+	}else{
+		echo "Fehler: ".$sql->error;
+	}
+}
+
+if(isset($_POST{'mitarbeiterUpdate'})){
+	// Mitarbeiter-ID wird als 'maID' per POST mitgegeben
+	$sql = $conn->prepare("UPDATE mitarbeiter SET vorname=?, nachname=?, abteilungsID=? WHERE idnummer=?;");
+	$sql->bind_param("ssii", $_POST['vorname'], $_POST['nachname'], $_POST['abteilung'], $_POST['maID']);
+
+	if($sql->execute()) {
+		header("location:../mitarbeiter.php");
 		exit();
 	}else{
 		echo "Fehler: ".$sql->error;

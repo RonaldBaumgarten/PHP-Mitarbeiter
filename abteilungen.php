@@ -47,11 +47,12 @@
 			</thead>
 			<tbody>
 
-<?php
-	$sql = $conn->query("SELECT * FROM abteilung");
+			<?php
+				$sql = $conn->query("SELECT * FROM abteilung");
 
-	while($line = $sql->fetch_assoc()){
-?>
+				while($line = $sql->fetch_assoc()){
+			?>
+
 			<tr>
 			<th scope="row"><?=$line['abtID']?></th>
 				<td><?=$line['bezeichnung']?></td>
@@ -59,12 +60,15 @@
 					<a href="config/funktionen.php?abtDelid=<?=$line['abtID'];?>">delete</a>
 				</td>
 				<td class="btn">
-					<a href="abtBearbeiten.php?abtID=<?=$line['abtID'];?>&abtBezeichnung=<?=$line['bezeichnung'];?>">edit</a>
+					<a href="abtBearbeiten.php?abtID=<?=$line['abtID'];?>
+						&abtBezeichnung=<?=$line['bezeichnung'];?>">edit
+					</a>
 				</td>
 			</tr>
-<?php
-	}
-?>
+
+			<?php
+				}
+			?>
 
 			</tbody>
 		</table>

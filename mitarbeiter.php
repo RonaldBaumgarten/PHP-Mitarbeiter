@@ -63,16 +63,18 @@
 			</thead>
 			<tbody>
 
-<?php
-	$sql = $conn->query("SELECT * FROM mitarbeiter JOIN abteilung ON mitarbeiter.abteilungsID=abteilung.abtID ");
+				<?php
+					$sql = $conn->query("SELECT * FROM mitarbeiter 
+					JOIN abteilung ON mitarbeiter.abteilungsID=abteilung.abtID ");
+				
+					while($zeile = $sql->fetch_assoc()){
+						echo "<tr>";
+						echo "<th scope='row'>$zeile[idnummer]</th>";
+						echo "<td>$zeile[vorname]</td>";
+						echo "<td>$zeile[nachname]</td>";
+						echo "<td>$zeile[bezeichnung]</td>";
+				?>
 
-	while($zeile = $sql->fetch_assoc()){
-		echo "<tr>";
-		echo "<th scope='row'>$zeile[idnummer]</th>";
-		echo "<td>$zeile[vorname]</td>";
-		echo "<td>$zeile[nachname]</td>";
-		echo "<td>$zeile[bezeichnung]</td>";
-?>
 				<td class="btn">
 					<a href="config/funktionen.php?maDelid=<?=$zeile['idnummer'];?>">delete</a>
 				</td>
@@ -80,9 +82,9 @@
 					<a href="mitarbeiterBearbeiten.php?maID=<?=$zeile['idnummer'];?>">edit</a>
 				</td>
 
-<?php
-	}
-?>
+				<?php
+					}
+				?>
 
 			</tbody>
 		</table>
